@@ -1,0 +1,167 @@
+/* Color Palette */
+
+:root {
+    --palette-black: #1B281B;
+    --palette-orange: #FAB95B;
+    --palette-navy: #1A3263;
+    --palette-bluegrey: #547792;
+}
+
+/* CSS Reset */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Text Properties */
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    color: var(--palette-black);
+}
+
+h1 {
+    font-size: 6rem;
+    color: var(--palette-navy);
+    text-align: center;
+
+    @media (width < 738px) {
+        font-size: 3rem;
+    }
+
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--palette-orange);
+}
+
+.bluegrey-text {
+    color: var(--palette-bluegrey);
+}
+
+/* Wrapper */
+
+.wrapper {
+    max-inline-size: 90vw; /* set the div to have a maximum width of 90% of the browser window */
+    margin-inline: auto; /* automatically distribute the remaining 10% of the width evenly on both sides of the div */
+}
+
+/* Images */
+
+.banner {
+    inline-size: 100%;
+}
+
+.logo {
+    inline-size: 3em;
+}
+
+
+/* Lists */
+
+ul {
+    list-style-type: circle;
+}
+
+
+/* Links */
+
+a {
+    color: var(--palette-bluegrey);
+    /* background-color: yellow; */
+    padding-inline: 10px;
+    display: block;
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--palette-orange);
+}
+
+
+/* Navbar (using flexbox) */
+
+.nav-bar {
+    display: flex;  /* uses CSS flexbox, the nav-bar (the class on the header) */
+    justify-content: space-between; /* distributes the remaining space between the direct children of the nav-bar  */
+    flex-direction: row; /* this is the default, the parent flex container is a row, so its children are columns */
+}
+
+.nav-list {
+    list-style-type: none; /* turn off bullet points */
+    display: flex; /* make the ul a flex container as well, so we can make its elements more easy to distribute */
+    flex-direction: row; /* this ul is also a row, so its children are columns */
+    gap: 2vw; /* add a gap of 2vw (= 2% of the viewport width) */
+}
+
+.nav-list li {
+    flex: 1;
+    /* flex: 1 is a shorthand for:
+                    flex-basis: 0%; <- this says, make each element take up 0% of the width of its parent container
+                    flex-shrink: 1; <- with multiple elements, this is saying all elements should shrink by the same amount to fit into the parent container
+                    flex-grow: 1;   <- same as flex-shrink, but grow to fit the container instead
+                                */
+}
+
+.nav-list a {
+    text-decoration: none; /* removes the underline from the links in the nav-list  */
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center; /* aligns text to the center of a block; inherited by all block elements in the footer (e.g., the <p>) */
+    background-color: var(--palette-bluegrey); /* sets the background color using the custom property defined in the :root selector at the top of this document */
+    color: white; /* sets text color to white */
+    padding: 50px; /* sets a padding of 50px to each side of the footer element; padding keeps the background color */
+    border: 2px solid var(--palette-black); /* sets a solid black border 2 pixels wide around the padding box of the footer */
+}
+
+
+/* Cards (using grid) */
+
+.card-container {
+    display: grid; /* use CSS grid, this container becomes a grid, its children are cells in that grid */
+    grid-auto-flow: column; /* set each child element of the card-container to be a column in the grid */
+    grid-auto-columns: 40%; /* set the width of each column of the grid to 40% of the width of the parent container */
+    grid-column-gap: 2rem;  /* 2rem gap between columns */
+    
+    overflow-x: scroll; /* hides the cards that overflow the container and makes this container scrollable */
+
+    /* TRY: comment out the grid-auto-flow, grid-auto-columns, and overflow-x properties, and uncomment the grid-template-columns property below */
+    /*grid-template-columns: repeat(3, 1fr); /* sets the size of each column to 1fr (1 equal fraction of the width), the fr unit only works for CSS grid 
+                                                repeat(3, 1fr) is the same as writing 1fr 1fr 1fr 
+                                                the number of values given to grid-template-columns determines the number of columns
+                                                    repeat(5, 1fr) would create a grid with 5 columns */
+    /* ALSO TRY: modify the media queries to set a different number of columns at different screen sizes */
+
+    margin-block: 20px; /* add a margin above and below the card container, to space it away from the footer */
+
+    @media (800px <= width < 1200px) {  /* on medium screen widths */
+        grid-auto-columns: 60%;         /* each card gets a slightly larger width */
+    }
+
+    @media (width < 800px) {            /* on smaller screen widths */
+        grid-auto-columns: 100%;        /* card takes up entire width */
+        grid-auto-flow: row;            /* each card is a row */
+        gap: 1rem;
+    }
+}
+
+
+.card { /* style each card */
+    background-color: #eee; 
+    padding: 20px;
+    border: 2px solid grey;
+    border-radius: 20px; /* curves the edges of the border/padding */
+}
+
+.card h2 {
+    background-color: white;
+    inline-size: max-content; /*  */
+    padding: 5px;
+    border-radius: 10px; /* curves the edges of the border/padding */
+}
