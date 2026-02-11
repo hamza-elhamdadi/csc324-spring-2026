@@ -10,24 +10,31 @@
     </head>
     <body>
         <div class="wrapper">
-            <header class="nav-bar">
-                <!-- logo and navigation bar -->
+            <header>
                 <img class="logo" src="images/logo.svg" alt="" />
                 <nav>
+                    <!-- Notice the class name here (nav-list is the list of links) -->
                     <ul class="nav-list">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="other.html">Other</a></li>
                     </ul>
                 </nav>
             </header>
-            <main>
-                <!-- <h1 dir="rtl">مرحباً بكم في CSC324</h1> -->
+        </div>
+        <main>
+            <!-- <h1 dir="rtl">مرحباً بكم في CSC324</h1> -->
+            <div class="wrapper">
                 <h1>Welcome to CSC324 <span class="bluegrey-text">Web Programming!</span></h1>
+            </div>
 
-                <img class="banner" src="images/web_dev.jpg" alt="A laptop on a table displaying CSS code."/>
+            <!-- Notice that this banner is not inside a wrapper div -->
+            <img class="banner" src="images/web_dev.jpg" alt="A laptop on a table displaying CSS code."/>
 
-                <p >This is an overview of the Web Programming course at Stonehill College. <a target="_blank" href="https://stonehill.edu">Visit Stonehill's homepage.</a></p>
+            
+            <div class="wrapper">
+                <p>This is an overview of the Web Programming course at Stonehill College. <a target="_blank" href="https://stonehill.edu">Visit Stonehill's homepage.</a></p>
                 <p>In this class, we'll learn about the entire web development stack, including front-end, back-end and database technologies.</p>
+
                 <div class="card-container">
                     <section class="card">
                         <h2>Front-End</h2>
@@ -56,11 +63,11 @@
                             <p>For this class, we will use MongoDB (a NoSQL database) to stick to that JavaScript lifestyle.</p>
                     </section>
                 </div>
-            </main>
-            <footer>
-                <p>&copy;2026 Hamza Elhamdadi</p>
-            </footer>
-        </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy;2026 Hamza Elhamdadi</p>
+        </footer>
     </body>
 </html>
 
