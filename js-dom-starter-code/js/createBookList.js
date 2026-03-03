@@ -7,4 +7,4 @@ function addArrayOfBooksToList(books) {
     
 }
 
-export default addArrayOfBooksToList;
+export { addBookToList, addArrayOfBooksToList };
