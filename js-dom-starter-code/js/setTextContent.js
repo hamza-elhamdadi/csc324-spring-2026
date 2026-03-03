@@ -2,6 +2,10 @@ const setParagraphText = function(text) {
     // TODO: set the text of the first paragraph
     // TODO: set the text of all of the paragraphs
     // TODO: set the text of the third paragraph
+    let paragraphs = document.querySelectorAll("p");
+    paragraphs.forEach(paragraph => {
+        paragraph.textContent = text;
+    })
 }
 
 const createNewParagraph = function(text) {
