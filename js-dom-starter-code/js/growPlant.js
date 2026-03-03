@@ -13,4 +13,4 @@ const setupButton = function() {
 
 }
 
-export default setupButton;
+export { growPlant, setupButton };
