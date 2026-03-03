@@ -3,11 +3,7 @@ const growPlant = function(event) {
     // TODO: Change the motivation text to something else (e.g., "Hooray! You did it!") 
     // TODO: Remove the button from the HTML
 
-    let image = document.querySelector("#plant");
-    image.src = "./images/tree";
-
-    let text = document.querySelector("#motivation");
-    text.textContent = "Hooray! You did it!"
+    
 }
 
 const setupButton = function() {
