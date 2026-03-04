@@ -11,9 +11,14 @@
 
         <!-- TODO: Add a script tag here and import the javascript modules -->
         <script type="module">
+            import { addBookToList, addArrayOfBooksToList } from "./js/createBookList.js";
+
+            addBookToList("My favorite book");
             
             // sample array
             const favoriteBooks = ["Braiding Sweetgrass", "The Fifth Season", "Acceptance"];
+
+            addArrayOfBooksToList(favoriteBooks);
         </script>
     </head>
     <body>
