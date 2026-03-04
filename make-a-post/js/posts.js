@@ -1,27 +1,8 @@
 function addPost(post) {
     // TODO: Select the div with the id "post-container"
     // TODO: Make the object "post" a child of the post-container div
-    const div = document.createElement("div");
-    div.classList.add("post");
-    
 
-    const image = document.createElement("img");
-    image.classList.add("profile-pic");
-    image.src = "images/tree-icon.png";
-
-    div.appendChild(image);
-
-
-    const paragraph = document.createElement("paragraph");
-    paragraph.textContent = post;
-
-    div.appendChild(paragraph);
-
-    document.querySelector("#post-container").appendChild(div);
-
-
-
-    
+    document.querySelector("#post-container").appendChild(post);
 }
 
 function createPost(postText, profilePicImagePath) {
@@ -30,7 +11,23 @@ function createPost(postText, profilePicImagePath) {
     //       to add a class to an element use .classList.add()
     //       to set an attribute (e.g., 'src'), .attribute = "valueToSet"
     //       to make one element a child of another, use parentElement.appendChild(childElement)
+    const div = document.createElement("div");
+    div.classList.add("post");
+    
 
+    const image = document.createElement("img");
+    image.classList.add("profile-pic");
+    image.src = profilePicImagePath;
+
+    div.appendChild(image);
+
+
+    const paragraph = document.createElement("p");
+    paragraph.textContent = postText;
+
+    div.appendChild(paragraph);
+
+    return div;
 }
 
 function postHandler(event){
@@ -39,7 +36,8 @@ function postHandler(event){
 
     const textInput = document.querySelector("#post-body");
 
-    addPost(textInput.value);
+    const post = createPost(textInput.value, "images/tree-icon.png");
+    addPost(post);
 
     textInput.value = "";
 }
