@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript DOM Warmup</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Warmup practice for creating JavaScript DOM objects" />
+
+        <link rel="stylesheet" href="./css/styles.css" />
+        <script type="module">
+            import AlertButton from './js/alertButton.js';
+
+            const main = document.querySelector("main");
+            // TODO: create a new AlertButton object with main as the parent element
+            const alertButton = new AlertButton(main, 'hello')
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <main>
+                
+            </main>
+        </div>
+    </body>
+</html>
