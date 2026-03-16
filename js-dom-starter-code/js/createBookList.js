@@ -9,7 +9,7 @@ function addBookToList(bookName){
 
 function addArrayOfBooksToList(books) {
     // TODO: foreach string in books, create a book and add it to the ul using the addBookToList callback function
-    books.forEach(addBookToList);
+    // books.forEach(addBookToList);
 
     for(let book of books){
         addBookToList(book);

@@ -32,7 +32,6 @@ function createPost(postText, profilePicImagePath) {
 
 function postHandler(event){
     // TODO: get the input value and call createPost and addPost above
-    event.preventDefault();
 
     const textInput = document.querySelector("#post-body");
 
@@ -40,6 +39,8 @@ function postHandler(event){
     addPost(post);
 
     textInput.value = "";
+
+    event.preventDefault();
 }
 
 function setup() {

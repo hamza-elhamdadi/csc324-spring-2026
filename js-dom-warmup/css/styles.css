@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.4rem;
+    font-family:'Courier New', Courier, monospace
+}
+
+/* Page Wrapper */
+
+.wrapper {
+    max-inline-size: 800px;
+    margin: auto;
+}
+
+/* Main */
+
+main {
+    margin-block: 30px;
+}
+
+/* Button */
+
+.alert-button {
+    font-family:'Courier New', Courier, monospace;
+    inline-size: 100%;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: #b5d1f9;
+    color: #60799c;
+}
+
+.alert-button:hover {
+    background-color: #7593bc;
+    color: #b5d1f9;
+}   
