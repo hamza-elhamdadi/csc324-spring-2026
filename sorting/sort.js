@@ -1,11 +1,15 @@
 
-const nums = [4, 1, 2, 3];
+// const nums = [4, 1, 2, 3];
+const fruits = ["banana", "apple", "mango", "kiwi"];
 
-function sortComparator(num1, num2){
-    return num1 - num2;
 
+
+console.log("b".localeCompare("a"))
+
+function sortComparator(str1, str2){
+   return str2.localeCompare(str1);
 }
 
-nums.sort(sortComparator);
+fruits.sort(sortComparator);
 
-console.log(nums);
+console.log(fruits);

@@ -58,9 +58,23 @@ class App {
     }
 
     sortPosts(){
-        console.log(this.posts);
 
-        this.posts.sort();
+        function sortComparator(post1, post2){
+            return post1.postText.localeCompare(post2.postText);
+        }
+
+        this.posts.sort(sortComparator);
+        this.refreshPosts();
+        // console.log(this.posts);
+    }
+
+    refreshPosts(){
+        // iterate through the posts array
+        // remove the post and add it back in order to the DOM
+        for(const post of this.posts){
+            post.div.remove();
+            this.postContainer.appendChild(post.div);
+        }
     }
 
 }
