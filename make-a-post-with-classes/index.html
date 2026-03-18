@@ -9,11 +9,9 @@
         <link rel="stylesheet" href="./css/styles.css" />
 
         <script type="module">
-            import SocialMediaPost from "./js/posts.js";
+            import App from "./js/posts.js";
 
-            const postContainer = document.querySelector("#post-container");
-            
-            const socialMediaPost = new SocialMediaPost(postContainer, "example post", "images/tree-icon.png");
+            const app = new App();
         </script>
     </head>
     <body>
@@ -37,7 +35,7 @@
                 </aside>
                 <div>
                     <button class="form-button" id="sort">Sort Posts</button>
-                        <article class="post-container" id="post-container">
+                    <article class="post-container" id="post-container">
                     </article>
                 </div>
             </main>

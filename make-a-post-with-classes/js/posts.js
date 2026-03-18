@@ -1,33 +1,70 @@
 class SocialMediaPost {
     constructor(parentElement, postText, profilePicURL){
-        // this should have a reference to the parentElement
-        // a reference to the postText
-        // a reference to the profilePicURL
+        // save parentElement to the object
         this.parentElement = parentElement;
+        // save postText to the object
         this.postText = postText;
+        // save profilePicURL to the object
         this.profilePicURL = profilePicURL;
 
-        // create the post div and add it to the parentElement
-        // use this.div
+        // create the div as an instance variable, give it the class "post"
         this.div = document.createElement("div");
         this.div.classList.add("post");
 
+        // create the profile pic image and add it to the div instance variable
         const image = document.createElement("img");
         image.classList.add("profile-pic");
         image.src = this.profilePicURL;
         this.div.appendChild(image);
 
+        // create the post text paragraph and add it to the div instance variable
         const p = document.createElement('p');
         p.textContent = postText;
         this.div.appendChild(p);
 
+        // add the div to the parent element
         this.parentElement.appendChild(this.div);
 
-        
     }
 }
 
+class App {
+    constructor(){
+        // set up a reference to the post container in the html
+        this.postContainer = document.querySelector("#post-container");
+        // set up a reference to the text input
+        this.textInput = document.querySelector('#post-body');
+        // set up an array variable that will hold the posts 
+        this.posts = [];
+
+        this.addPost = this.addPost.bind(this);
+        this.sortPosts = this.sortPosts.bind(this);
+
+        document.querySelector("#add-post").addEventListener('submit', this.addPost);
+        document.querySelector("#sort").addEventListener("click", this.sortPosts);
+    }
+
+    addPost(event){
+        // this method should create an instance of a SocialMediaPost class (with the text from the text input)
+        // with the parent element of the SocialMediaPost being the post container
+
+        console.log("test");
+
+        const post = new SocialMediaPost(this.postContainer, this.textInput.value, "images/tree-icon.png");
+        this.posts.push(post);
+        this.textInput.value = "";
+        
+        event.preventDefault();
+    }
+
+    sortPosts(){
+        console.log(this.posts);
+
+        this.posts.sort();
+    }
+
+}
 
 
-export default SocialMediaPost;
+export default App;
 
